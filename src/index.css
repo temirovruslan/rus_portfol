@@ -1,0 +1,413 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Poppins", sans-serif;
+	scroll-behavior: smooth;
+	color-scheme: dark;
+}
+
+.hash-span {
+	margin-top: -100px;
+	padding-bottom: 100px;
+	display: block;
+}
+
+.black-gradient {
+	background: #000000; /* fallback for old browsers */
+	background: -webkit-linear-gradient(
+		to right,
+		#434343,
+		#000000
+	); /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(
+		to right,
+		#434343,
+		#000000
+	); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.violet-gradient {
+	background: #804dee;
+	background: linear-gradient(-90deg, #804dee 0%, rgba(60, 51, 80, 0) 100%);
+	background: -webkit-linear-gradient(
+		-90deg,
+		#804dee 0%,
+		rgba(60, 51, 80, 0) 100%
+	);
+}
+
+.green-pink-gradient {
+	background: "#00cea8";
+	background: linear-gradient(90.13deg, #00cea8 1.9%, #bf61ff 97.5%);
+	background: -webkit-linear-gradient(-90.13deg, #00cea8 1.9%, #bf61ff 97.5%);
+}
+
+.orange-text-gradient {
+	background: #f12711; /* fallback for old browsers */
+	background: -webkit-linear-gradient(
+		to top,
+		#f12711,
+		#f5af19
+	); /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(
+		to top,
+		#f12711,
+		#f5af19
+	); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+.green-text-gradient {
+	background: #11998e; /* fallback for old browsers */
+	background: -webkit-linear-gradient(
+		to top,
+		#11998e,
+		#38ef7d
+	); /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(
+		to top,
+		#11998e,
+		#38ef7d
+	); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+.blue-text-gradient {
+	/* background: -webkit-linear-gradient(#eee, #333); */
+	background: #56ccf2; /* fallback for old browsers */
+	background: -webkit-linear-gradient(
+		to top,
+		#2f80ed,
+		#56ccf2
+	); /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(
+		to top,
+		#2f80ed,
+		#56ccf2
+	); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+.pink-text-gradient {
+	background: #ec008c; /* fallback for old browsers */
+	background: -webkit-linear-gradient(
+		to top,
+		#ec008c,
+		#fc6767
+	); /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(
+		to top,
+		#ec008c,
+		#fc6767
+	); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+/* canvas- styles */
+.canvas-loader {
+	font-size: 10px;
+	width: 1em;
+	height: 1em;
+	border-radius: 50%;
+	position: relative;
+	text-indent: -9999em;
+	animation: mulShdSpin 1.1s infinite ease;
+	transform: translateZ(0);
+}
+
+@keyframes mulShdSpin {
+	0%,
+	100% {
+		box-shadow: 0em -2.6em 0em 0em #ffffff,
+			1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2),
+			2.5em 0em 0 0em rgba(255, 255, 255, 0.2),
+			1.75em 1.75em 0 0em rgba(255, 255, 255, 0.2),
+			0em 2.5em 0 0em rgba(255, 255, 255, 0.2),
+			-1.8em 1.8em 0 0em rgba(255, 255, 255, 0.2),
+			-2.6em 0em 0 0em rgba(255, 255, 255, 0.5),
+			-1.8em -1.8em 0 0em rgba(255, 255, 255, 0.7);
+	}
+	12.5% {
+		box-shadow: 0em -2.6em 0em 0em rgba(255, 255, 255, 0.7),
+			1.8em -1.8em 0 0em #ffffff, 2.5em 0em 0 0em rgba(255, 255, 255, 0.2),
+			1.75em 1.75em 0 0em rgba(255, 255, 255, 0.2),
+			0em 2.5em 0 0em rgba(255, 255, 255, 0.2),
+			-1.8em 1.8em 0 0em rgba(255, 255, 255, 0.2),
+			-2.6em 0em 0 0em rgba(255, 255, 255, 0.2),
+			-1.8em -1.8em 0 0em rgba(255, 255, 255, 0.5);
+	}
+	25% {
+		box-shadow: 0em -2.6em 0em 0em rgba(255, 255, 255, 0.5),
+			1.8em -1.8em 0 0em rgba(255, 255, 255, 0.7), 2.5em 0em 0 0em #ffffff,
+			1.75em 1.75em 0 0em rgba(255, 255, 255, 0.2),
+			0em 2.5em 0 0em rgba(255, 255, 255, 0.2),
+			-1.8em 1.8em 0 0em rgba(255, 255, 255, 0.2),
+			-2.6em 0em 0 0em rgba(255, 255, 255, 0.2),
+			-1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2);
+	}
+	37.5% {
+		box-shadow: 0em -2.6em 0em 0em rgba(255, 255, 255, 0.2),
+			1.8em -1.8em 0 0em rgba(255, 255, 255, 0.5),
+			2.5em 0em 0 0em rgba(255, 255, 255, 0.7),
+			1.75em 1.75em 0 0em #ffffff,
+			0em 2.5em 0 0em rgba(255, 255, 255, 0.2),
+			-1.8em 1.8em 0 0em rgba(255, 255, 255, 0.2),
+			-2.6em 0em 0 0em rgba(255, 255, 255, 0.2),
+			-1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2);
+	}
+	50% {
+		box-shadow: 0em -2.6em 0em 0em rgba(255, 255, 255, 0.2),
+			1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2),
+			2.5em 0em 0 0em rgba(255, 255, 255, 0.5),
+			1.75em 1.75em 0 0em rgba(255, 255, 255, 0.7),
+			0em 2.5em 0 0em #ffffff, -1.8em 1.8em 0 0em rgba(255, 255, 255, 0.2),
+			-2.6em 0em 0 0em rgba(255, 255, 255, 0.2),
+			-1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2);
+	}
+	62.5% {
+		box-shadow: 0em -2.6em 0em 0em rgba(255, 255, 255, 0.2),
+			1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2),
+			2.5em 0em 0 0em rgba(255, 255, 255, 0.2),
+			1.75em 1.75em 0 0em rgba(255, 255, 255, 0.5),
+			0em 2.5em 0 0em rgba(255, 255, 255, 0.7), -1.8em 1.8em 0 0em #ffffff,
+			-2.6em 0em 0 0em rgba(255, 255, 255, 0.2),
+			-1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2);
+	}
+	75% {
+		box-shadow: 0em -2.6em 0em 0em rgba(255, 255, 255, 0.2),
+			1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2),
+			2.5em 0em 0 0em rgba(255, 255, 255, 0.2),
+			1.75em 1.75em 0 0em rgba(255, 255, 255, 0.2),
+			0em 2.5em 0 0em rgba(255, 255, 255, 0.5),
+			-1.8em 1.8em 0 0em rgba(255, 255, 255, 0.7),
+			-2.6em 0em 0 0em #ffffff,
+			-1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2);
+	}
+	87.5% {
+		box-shadow: 0em -2.6em 0em 0em rgba(255, 255, 255, 0.2),
+			1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2),
+			2.5em 0em 0 0em rgba(255, 255, 255, 0.2),
+			1.75em 1.75em 0 0em rgba(255, 255, 255, 0.2),
+			0em 2.5em 0 0em rgba(255, 255, 255, 0.2),
+			-1.8em 1.8em 0 0em rgba(255, 255, 255, 0.5),
+			-2.6em 0em 0 0em rgba(255, 255, 255, 0.7),
+			-1.8em -1.8em 0 0em #ffffff;
+	}
+}
+
+.center {
+	@apply flex items-center justify-center;
+}
+
+/* .slide-in {
+		@apply fixed top-0 bottom-0 w-full h-screen bg-[#dbbebe] origin-bottom;
+	}
+	.slide-out {
+		@apply fixed top-0 bottom-0 w-full h-screen bg-[#0d3434] origin-top;
+	} */
+/* ------------card animation------------ */
+
+.card {
+	@apply relative w-[430px] max-h-[550px] shadow-[0_15px_35px_rgba(0,0,0,0.25)] overflow-hidden rounded-[20px];
+}
+/* @media (max-width: 1000px) {
+		.mySwiper {
+			@apply w-[400px]  !important;
+		}
+	} */
+@media (max-width: 650px) {
+	.mySwiper {
+		@apply w-[400px]   !important;
+	}
+}
+@media (max-width: 475px) {
+	.mySwiper {
+		@apply w-[400px]  !important;
+	}
+}
+@media (max-width: 430px) {
+	.mySwiper {
+		@apply w-[350px]  !important;
+	}
+}
+@media (max-width: 380px) {
+	.mySwiper {
+		@apply w-[300px]  !important;
+	}
+}
+.card .poster {
+	@apply relative overflow-hidden before:content-[""] before:absolute before:bottom-[-180px] before:w-full before:h-full before:z-[1] before:duration-500  before:bg-[100%_100%];
+}
+.card .poster::before {
+	background: linear-gradient(0deg, #1064a6 50%, transparent);
+}
+.blue::before {
+	background: linear-gradient(0deg, #04204a, transparent) !important;
+}
+/* .blue::before {
+		background: linear-gradient(0deg, #a61010, transparent) !important;
+	} */
+.white::before {
+	background: linear-gradient(0deg, #b8b1b1, transparent) !important;
+}
+
+.milk::before {
+	background: linear-gradient(0deg, #545424, transparent) !important;
+}
+
+.card:hover .poster::before {
+	@apply bottom-0;
+}
+.card .poster img {
+	@apply w-full duration-500;
+}
+
+.card .details {
+	@apply absolute bottom-[-105px] w-full z-[2] duration-500 px-5 pt-5 pb-2 left-0;
+}
+
+.card:hover .details {
+	@apply bottom-0;
+}
+.card .expanded {
+	@apply absolute bottom-[-80px] w-full z-[2] duration-500 p-5 left-0;
+}
+@media (max-width: 475px) {
+	.card .expanded {
+		@apply absolute bottom-[-80px] w-full z-[2] duration-500 px-2 py-2 left-0;
+	}
+}
+.card:hover .expanded {
+	@apply bottom-[0px];
+}
+
+.card .details .logo {
+	@apply max-w-[180px];
+}
+.card .details h3 {
+	@apply text-white;
+}
+.card .details .rating {
+	@apply relative px-0 py-[5px];
+}
+.card .details .tags {
+	@apply relative mt-[5px];
+}
+.card .details .tags span {
+	@apply text-white rounded px-[5px] py-0.5;
+	background: rgb(21, 136, 224);
+}
+.info {
+	@apply text-white;
+}
+.cast {
+	@apply relative;
+}
+.cast ul {
+	@apply relative flex;
+}
+
+/* btn lunch me with icon rocket */
+.cssbuttons-io-button {
+	@apply text-[black] text-[17px] font-medium tracking-wider flex items-center shadow-[inset_0_0_1.6em_-0.6em_#714da6] overflow-hidden relative h-[2.4em] cursor-pointer pl-[1.2em] pr-[3.3em] p-[0.35em] rounded-[0.9em] border-[none];
+	font-family: inherit;
+}
+.cssbuttons-io-button .icon {
+	@apply absolute flex items-center justify-center h-[1.8em] w-[2.2em]  transition-all duration-[0.3s] ml-[1em] rounded-[0.7em] right-[0.3em];
+	background: white;
+}
+.cssbuttons-io-button:hover .icon {
+	@apply w-[calc(100%_-_0.6em)];
+}
+.cssbuttons-io-button .icon svg {
+	@apply w-[1.1em] transition-transform duration-[0.3s];
+}
+.cssbuttons-io-button:hover .icon svg {
+	@apply translate-x-[0.1em];
+}
+.cssbuttons-io-button:active .icon {
+	@apply scale-95;
+}
+.swiper-pagination-bullet-active {
+	background-color: red !important;
+}
+
+.swiper-pagination-bullet {
+	background-color: rgba(255, 0, 0, 0.5);
+}
+
+/* .swiper {
+		width: 500px !important;
+	} */
+
+/* arrow swiper costume */
+.btn-class-name {
+	@apply w-[50px] h-[40px] cursor-pointer select-none touch-manipulation relative transition-[0.3s] rounded-[100%] border-[none];
+	--primary: 255, 90, 120;
+	--secondary: 150, 50, 60;
+	outline: none;
+	outline: 10px solid rgb(var(--primary), 0.5);
+}
+.btn-class-name .back {
+	@apply absolute w-full h-full rounded-[100%] left-0 top-0;
+	background: rgb(var(--secondary));
+}
+.btn-class-name .front {
+	@apply shadow-[0_0.5em_1em_-0.2em_rgba(var(--secondary),0.5)] absolute border border-[rgb(var(--secondary))] w-full h-full flex justify-center items-center text-[1.2rem] font-semibold translate-y-[-15%] transition-[0.15s] text-[rgb(var(--secondary))] rounded-[100%] border-solid left-0 top-0;
+	background: linear-gradient(
+		0deg,
+		rgba(var(--primary), 0.6) 20%,
+		rgba(var(--primary)) 50%
+	);
+	font-family: inherit;
+}
+.btn-class-name:active .front {
+	@apply translate-y-[0%] shadow-[0_0];
+}
+
+.btn-class-name.blue {
+	--primary: 90, 120, 255; /* Blue color */
+	--secondary: 50, 60, 150; /* Darker shade of blue for contrast */
+}
+
+/* .swiper-slide swiper-slide-active card {
+		width: 350px !important;
+		/* height: 580px !important; */
+
+/* .swiper-slide {
+		width: 80px !important;
+	} */
+
+/* read more btn */
+
+.button {
+	@apply cursor-pointer relative text-base text-white bg-transparent font-semibold transition-all duration-[0.3s] ease-[cubic-bezier(0.23,1,0.320,1)] overflow-hidden px-2 py-1 rounded-[24px] border-2 border-solid border-gray-500 before:content-[''] before:absolute before:w-[40px] before:h-[40px] before:z-[-1] before:bg-gray-500 before:transition-all before:duration-[0.6s] before:ease-[cubic-bezier(0.23,1,0.320,1)] before:m-auto before:rounded-[inherit] before:inset-0 hover:text-[black] hover:shadow-[0_0px_20px_rgba(128,128,128,0.4)]; /* Change the shadow color to match the background color */
+}
+
+.yellow {
+	@apply cursor-pointer relative text-base text-white bg-transparent font-semibold transition-all duration-[0.3s] ease-[cubic-bezier(0.23,1,0.320,1)] overflow-hidden px-2 py-1 rounded-[24px] border-2 border-solid border-[#e4ff00] before:content-[''] before:absolute before:w-[40px] before:h-[40px] before:z-[-1] before:bg-[#e4ff00] before:transition-all before:duration-[0.6s] before:ease-[cubic-bezier(0.23,1,0.320,1)] before:m-auto before:rounded-[inherit] before:inset-0 hover:text-[black] hover:shadow-[0_0px_20px_rgba(128,128,128,0.4)] !important; /* Change the shadow color to match the background color */
+}
+
+.button::before {
+	scale: 0;
+}
+.button:hover::before {
+	scale: 3;
+}
+.button:hover {
+	scale: 1.1;
+}
+.button:active {
+	scale: 1;
+}
