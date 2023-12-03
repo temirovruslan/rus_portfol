@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 import { styles } from "../styles";
 import { ComputersCanvas } from "./canvas";
-import ParticlesContainer from "./ParticlesContainer";
+// import ParticlesContainer from "./ParticlesContainer";
 import { useTypingEffect } from "../hooks/useTypingEffect";
 import { useEffect, useState } from "react";
 // import useTypingEffect from '../hooks/useTypingEffect'
