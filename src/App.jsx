@@ -1,5 +1,5 @@
 import { BrowserRouter } from "react-router-dom";
-import AnimatedCardMobile from './components/AnimatedCardMobile'
+import AnimatedCardMobile from "./components/AnimatedCardMobile";
 import {
 	About,
 	Contact,
@@ -14,22 +14,24 @@ import {
 } from "./components";
 
 const App = () => {
+	
 	return (
 		<BrowserRouter>
-			<div className="relative z-0 bg-primary">
-				<div className="bg-hero-pattern bg-cover bg-no-repeat bg-center">
-					<Navbar />
-					{/* <Hero /> */}
-				</div>
+			<div className="relative z-0 bg-[#07121c]">
+				{/* <div className="bg-hero-pattern bg-cover bg-no-repeat bg- bg-[#07121c]">"> */}
+				<Navbar />
+				<Hero />
+			
+				{/* </div> */}
 				<About />
 				<Experience />
 				<Tech />
-				{/* <Works />
-				 */}
-				<AnimatedCardMobile/>
-				<Feedbacks />
+				<Works />
+				
+				{/* <AnimatedCardMobile /> */}
+				{/* <Feedbacks /> */}
 				<div className="relative z-0">
-					{/* <Contact /> */}
+					<Contact />
 					<StarsCanvas />
 				</div>
 			</div>
