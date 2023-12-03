@@ -114,6 +114,22 @@
 	-webkit-text-fill-color: transparent;
 }
 
+.light-blue-text-gradient {
+	background: rgb(21, 236, 248); /* fallback for old browsers */
+	background: -webkit-linear-gradient(
+		to top,
+		#0e8dc8,
+		#f0fc67
+	); /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(
+		to top,
+		#0e8dc8(137, 4, 84),
+		#f0fc67
+	); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
 /* canvas- styles */
 .canvas-loader {
 	font-size: 10px;
@@ -410,4 +426,13 @@
 }
 .button:active {
 	scale: 1;
+}
+.tooltip {
+	@apply relative  cursor-pointer;
+}
+.tooltip .tooltiptext {
+	@apply invisible w-[200px] bg-[#ffffff17] text-[white] text-center absolute z-[1] -translate-x-2/4 opacity-100 transition-opacity duration-[0.3s] p-2.5 rounded-[5px] left-2/4 bottom-[125%] after:content-[""] after:absolute after:-translate-x-2/4 after:border-8 after:border-solid after:border-[#28282817_transparent_transparent_transparent] after:left-2/4 after:top-full;
+}
+.tooltip:hover .tooltiptext {
+	@apply visible opacity-100;
 }

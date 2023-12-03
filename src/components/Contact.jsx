@@ -133,7 +133,7 @@ const Contact = () => {
 						type="submit"
 						className="bg-tertiary py-3 px-8 rounded-xl outline-none w-fit text-white font-bold shadow-md shadow-primary"
 					>
-						send
+						Send
 						{/* {loading ? "Sending..." : "Send"} */}
 					</button>
 
@@ -150,7 +150,7 @@ const Contact = () => {
 
 			<motion.div
 				variants={slideIn("right", "tween", 0.2, 1)}
-				className="xl:flex-1 xl:h-auto md:h-[550px] h-[350px]"
+				className="xl:flex-1 xl:h-auto md:h-[550px] h-[350px] hidden xl:block"
 			>
 				<EarthCanvas />
 			</motion.div>

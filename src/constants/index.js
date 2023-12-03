@@ -96,10 +96,7 @@ const technologies = [
 		name: "MongoDB",
 		icon: mongodb,
 	},
-	{
-		name: "Three JS",
-		icon: threejs,
-	},
+
 	{
 		name: "git",
 		icon: git,
@@ -107,10 +104,6 @@ const technologies = [
 	{
 		name: "figma",
 		icon: figma,
-	},
-	{
-		name: "docker",
-		icon: docker,
 	},
 ];
 
@@ -182,20 +175,28 @@ const projects = [
 			"Developed a sleek, responsive company site with modern design and user-friendly features. Integrated Google Analytics for insights and improved user experience. Committed to ongoing enhancements for an optimal online presence",
 		tags: [
 			{
-				name: "react",
+				name: "nextJs",
 				color: "blue-text-gradient",
 			},
 			{
-				name: "mongodb",
+				name: "figma",
 				color: "green-text-gradient",
 			},
 			{
 				name: "tailwind",
 				color: "pink-text-gradient",
 			},
+			{
+				name: "swiperJs",
+				color: "light-blue-text-gradient",
+			},
+			{
+				name: "antdDesign",
+				color: "pink-text-gradient",
+			},
 		],
 		image: "https://i.postimg.cc/jjv8NHd2/phare.webp",
-		source_code_link: "https://github.com/",
+		source_code_link: "https://www.phare-ts.com/",
 	},
 
 	{
@@ -215,9 +216,18 @@ const projects = [
 				name: "tailwind",
 				color: "pink-text-gradient",
 			},
+			{
+				name: "stripe",
+				color: "pink-text-gradient",
+			},
+
+			{
+				name: "sanityIo",
+				color: "pink-text-gradient",
+			},
 		],
 		image: "https://i.postimg.cc/Njd67rPn/apple.png",
-		source_code_link: "https://github.com/",
+		source_code_link: "https://apple-clone-gray.vercel.app",
 	},
 	{
 		name: "Magnus Platform",
@@ -229,16 +239,24 @@ const projects = [
 				color: "blue-text-gradient",
 			},
 			{
-				name: "mongodb",
+				name: "redux",
 				color: "green-text-gradient",
 			},
 			{
 				name: "tailwind",
 				color: "pink-text-gradient",
 			},
+			{
+				name: "antdCharts",
+				color: "light-blue-text-gradient",
+			},
+			{
+				name: "googleMapsApi",
+				color: "light-blue-text-gradient",
+			},
 		],
 		image: "https://i.postimg.cc/KvMyvjm6/magnus.webp",
-		source_code_link: "https://github.com/",
+		source_code_link: "",
 	},
 ];
 

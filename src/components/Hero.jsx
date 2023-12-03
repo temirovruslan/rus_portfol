@@ -8,7 +8,7 @@ import { useEffect, useState } from "react";
 // import useTypingEffect from '../hooks/useTypingEffect'
 const Hero = () => {
 	const text = useTypingEffect(
-		"Hello! I'm Ruslan, transform ideas into reality",
+		"Hi there! I'm Ruslan, a creative mind dedicated to turning ideas into reality!",
 		100
 	);
 	const [showUnderscore, setShowUnderscore] = useState(true);
@@ -23,9 +23,13 @@ const Hero = () => {
 	return (
 		<section className={`relative w-full h-screen mx-auto`}>
 			<div className="flex items-center justify-center w-full h-full">
-				<div className=" z-50 text-4xl font-bold text-[#ffffff] w-80 h-96 s">
-					{text}
-					{showUnderscore && "|"}
+				<div className="z-50 text-4xl font-bold text-[#ffffff] w-[290px]  md:w-[500px] h-96">
+					<p
+						className={` ${styles.sectionHeadText} sm:leading-[50px] xl:leading-[60px]`}
+					>
+						{text}
+						{showUnderscore && "|"}
+					</p>
 				</div>
 			</div>
 
