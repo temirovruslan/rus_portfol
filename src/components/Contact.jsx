@@ -2,7 +2,7 @@ import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
 
-import { useForm } from "react-hook-form";
+
 import toast, { Toaster } from "react-hot-toast";
 
 import { styles } from "../styles";
@@ -14,42 +14,51 @@ const Contact = () => {
 	const SERVICE_ID = import.meta.env.VITE_SERVICE_ID;
 	const TEMPLATE_ID = import.meta.env.VITE_TEMPLATE_ID;
 	const EMAIL_PUBLIC_KEY = import.meta.env.VITE_EMAIL_PUBLIC_KEY;
-	
 
 	const form = useRef();
-	const {
-		register,
-		reset,
-		formState: { errors },
-		handleSubmit,
-	} = useForm();
+	const [formData, setFormData] = useState({
+		user_name: "",
+		user_email: "",
+		message: "",
+	});
+	const [loading, setLoading] = useState(false); // Added loading state
+	const handleChange = (e) => {
+		const { name, value } = e.target;
+		setFormData({ ...formData, [name]: value });
+	};
 
-	const sendEmail = () => {
-    console.log(form.current)
-		if (form.current) {
-			emailjs
-				.sendForm(
-					SERVICE_ID,
-					TEMPLATE_ID,
-					form.current,
-					EMAIL_PUBLIC_KEY
-				)
-				.then(
-					() => {
-						toast.success(
-							"Received your message! Quick reply coming your way soon. 👍"
-						);
-						reset();
-					},
-					(error) => {
-						toast.error(
-							"Oops! Something went wrong. 😟 You can give it another shot or reach out to me on LinkedIn for assistance. 🚀"
-						);
-
-						console.log(error.text);
-					}
-				);
+	const sendEmail = (e) => {
+		e.preventDefault();
+		if (!formData.user_name || !formData.user_email || !formData.message) {
+			toast("Fill in all the blanks to make the form happy!", {
+				icon: "😋",
+			});
+			return;
 		}
+
+		// Set loading to true when starting the email sending process
+		setLoading(true);
+
+		emailjs
+			.sendForm(SERVICE_ID, TEMPLATE_ID, form.current, EMAIL_PUBLIC_KEY)
+			.then(
+				() => {
+					toast.success(
+						"Received your message! Quick reply coming your way soon. 👍"
+					);
+					setFormData({ user_name: "", user_email: "", message: "" });
+				},
+				(error) => {
+					toast.error(
+						"Oops! Something went wrong. 😟 You can give it another shot or reach out to me on LinkedIn for assistance. 🚀"
+					);
+					console.log(error.text);
+				}
+			)
+			.finally(() => {
+				// Set loading back to false after the email sending process is complete
+				setLoading(false);
+			});
 	};
 
 	return (
@@ -62,30 +71,23 @@ const Contact = () => {
 			>
 				<p className={styles.sectionSubText}>Get in touch</p>
 				<h3 className={styles.sectionHeadText}>Contact.</h3>
-
 				<form
 					className="mt-12 flex flex-col gap-8"
 					ref={form}
-					onSubmit={handleSubmit(sendEmail)}
+					onSubmit={sendEmail}
 				>
 					<label htmlFor="user_name" className="flex flex-col">
 						<span className="text-white font-medium mb-4">
 							Your Name
 						</span>
 						<input
+							name="user_name"
+							value={formData.user_name}
+							onChange={handleChange}
+							required={true}
 							placeholder="What's your good name?"
 							className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
-							{...register("user_name", { required: true })}
-							aria-invalid={errors.user_name ? "true" : "false"}
 						/>
-						{errors.user_name?.type === "required" && (
-							<p
-								className="text-red-500 text-xs italic"
-								role="alert"
-							>
-								Fill the name field please
-							</p>
-						)}
 					</label>
 
 					<label htmlFor="user_email" className="flex flex-col">
@@ -93,19 +95,13 @@ const Contact = () => {
 							Email
 						</span>
 						<input
+							name="user_email"
+							value={formData.user_email}
+							onChange={handleChange}
+							required={true}
 							placeholder="What's your email address?"
 							className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
-							{...register("user_email", { required: true })}
-							aria-invalid={errors.user_email ? "true" : "false"}
 						/>
-						{errors.user_email?.type === "required" && (
-							<p
-								className="text-red-500 text-xs italic"
-								role="alert"
-							>
-								Fill the email field please
-							</p>
-						)}
 					</label>
 
 					<label htmlFor="message" className="flex flex-col">
@@ -113,38 +109,23 @@ const Contact = () => {
 							Email
 						</span>
 						<textarea
+							name="message"
+							value={formData.message}
+							onChange={handleChange}
+							required={true}
 							rows={7}
 							placeholder="What you want to say?"
 							className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
-							{...register("message", { required: true })}
-							aria-invalid={errors.message ? "true" : "false"}
 						/>
-						{errors.message?.type === "required" && (
-							<p
-								className="text-red-500 text-xs italic"
-								role="alert"
-							>
-								Fill the message field please
-							</p>
-						)}
 					</label>
 					<button
-						onClick={sendEmail}
-						type="submit"
-						className="bg-tertiary py-3 px-8 rounded-xl outline-none w-fit text-white font-bold shadow-md shadow-primary"
-					>
-						Send
-						{/* {loading ? "Sending..." : "Send"} */}
-					</button>
-
-					{/* <div className="flex items-center justify-center">
-						<input
-							className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-							type="submit"
-							value="Send"
-						/>
-					</div> */}
-					<Toaster />
+				disabled={loading} // Disable the button when loading is true
+				onClick={sendEmail}
+				type="submit"
+				className="bg-tertiary py-3 px-8 rounded-xl outline-none w-fit text-white font-bold shadow-md shadow-primary"
+			>
+				{loading ? "Sending.." : "Send"}
+			</button>
 				</form>
 			</motion.div>
 
