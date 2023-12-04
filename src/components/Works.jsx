@@ -50,7 +50,7 @@ const ProjectCard = ({
 									alt="source code"
 									className="w-1/2 h-1/2 object-contain"
 								/> */}
-								<div className="tooltiptext">
+								<div className="tooltiptext w-[120px] text-[12px] md:text-[14px] md:w-[200px]">
 									Platform under development. No link
 									available yet
 								</div>
