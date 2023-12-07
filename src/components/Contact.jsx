@@ -106,7 +106,7 @@ const Contact = () => {
 
 					<label htmlFor="message" className="flex flex-col">
 						<span className="text-white font-medium mb-4">
-							Email
+							Message
 						</span>
 						<textarea
 							name="message"
